@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: onappapp_development
+
+test:
+  <<: *default
+  database: onappapp_test
+
+production:
+  <<: *default
+  database: onappapp_production
+  username: onappapp
+  password: <%= ENV['ONAPPAPP_DATABASE_PASSWORD'] %>
