@@ -1,0 +1,4 @@
+.form-group
+  = simple_form_for reply, url: ticket_replies_path(ticket) do |f|
+    = f.input :body, label: false, input_html: {rows: "5"}, placeholder: 'Enter reply...'
+    = f.submit "Reply", class: 'btn btn-default btn-small'

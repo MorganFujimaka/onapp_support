@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title OnApp Support
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        .col-md-12
+          .navbar-header
+            %a.no-decoration{href: '/'}
+              .title.navbar-brand OnApp Support
+          .collapse.navbar-collapse#bs-example-navbar-collapse-1
+            %ul.nav.navbar-nav.headers
+              %li= link_to 'New Tickets',     tickets_path(status: 'new_tickets')
+              %li= link_to 'Open Tickets',    tickets_path(status: 'open_tickets')
+              %li= link_to 'On Hold Tickets', tickets_path(status: 'on_hold_tickets')
+              %li= link_to 'Closed Tickets',  tickets_path(status: 'closed_tickets')
+            .navbar-text.navbar-right.headers
+              - if user_signed_in?
+                %span Hello #{current_user.username}
+                = link_to 'Sign out', destroy_user_session_path, method: :delete
+              - else
+                = link_to 'Sign in', new_user_session_path
+                |
+                = link_to 'Sign up', new_user_registration_path
+    .container-fluid
+      .row
+        .flash_messages= render 'shared/flash_messages' unless flash.empty?
+        = yield

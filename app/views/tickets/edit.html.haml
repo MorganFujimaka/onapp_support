@@ -1,0 +1,6 @@
+.col-md-4.col-md-offset-4
+  %h3 Edit ticket:
+  .form-group
+    = simple_form_for ticket do |f|
+      = render partial: 'form', locals: {f: f}
+      = f.submit "Update ticket", class: 'btn btn-default btn-small'

@@ -1,0 +1,23 @@
+.ticket {
+  margin: 2% 0;
+}
+
+tr.waiting_for_staff {
+  background-color: #EBF5FF;
+}
+
+tr.waiting_for_customer {
+  background-color: #FFFFCC;
+}
+
+tr.on_hold {
+  background-color: #FFEBCC;
+}
+
+tr.cancelled {
+  background-color: #FFD6CC;
+}
+
+tr.completed {
+  background-color: #D6F5D6;
+}

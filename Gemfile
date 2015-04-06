@@ -21,6 +21,9 @@ gem 'font-awesome-rails'
 gem 'autoprefixer-rails'
 gem 'cancancan', '~> 1.10'
 gem 'decent_exposure'
+gem 'figaro'
+gem 'aasm'
+gem 'will_paginate', '~> 3.0.6'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

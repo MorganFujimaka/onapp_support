@@ -1,0 +1,19 @@
+.col-md-8.col-md-offset-2
+  - if can? :update, ticket
+    = link_to 'Edit Ticket', edit_ticket_path(ticket), class: 'btn btn-primary btn-small pull-right'
+  %h2= ticket.subject
+  %p= "##{ticket.uref}"
+  %span= "status: #{Ticket::STATUSES[ticket.aasm_state.to_sym]}"
+  
+  - if ticket.employee.nil?
+    %span= "| Unassigned"
+  - else
+    %span= "| assigned to #{ticket.username}"
+
+  %p.ticket= ticket.body
+  
+  = render partial: 'shared/status_change' if can? :change_status, ticket
+  = render partial: 'shared/employee_change' if can? :change_assignee, ticket
+  = render partial: 'replies/form' if can? :create, reply
+  %h3 ticket's history:
+  = render partial: 'replies/replies', locals: {replies: ticket.replies.includes(:user)}

@@ -1,0 +1,4 @@
+.form-group
+  = simple_form_for ticket, url: change_assignee_ticket_path(ticket), html: {class: 'form-inline'} do |f|
+    = f.association :employee, collection: employees_names, label: false, include_blank: 'Set assignee'
+    = f.submit 'Change assignee', class: 'btn btn-default btn-small'

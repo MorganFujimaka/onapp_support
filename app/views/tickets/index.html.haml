@@ -1,0 +1,16 @@
+.col-md-12
+  - if can? :create, ticket
+    = link_to 'Add Ticket', new_ticket_path, class: 'btn btn-primary btn-small pull-right button'
+  %table.table
+    %tr
+      %th Reference
+      %th Subject
+      %th Customer Name
+      %th Customer Email
+      %th Department
+      %th Description
+      %th Status
+      %th Created At
+      %th Updated At
+    = render tickets.newest_first
+    = will_paginate tickets

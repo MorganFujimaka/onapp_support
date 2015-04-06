@@ -1,0 +1,14 @@
+.col-md-12
+  %table.table.borderless
+    %tr
+      %td.vert-align
+        %span Ticket was created
+        %br
+        %em= "#{ticket.customer_name}, #{ticket.created_at.strftime('%b %-m, %Y %T')}"
+    - replies.each do |reply|
+      %tr
+        - cache reply do
+          %td.vert-align
+            = reply.body
+            %br
+            %em= "#{reply.username}, #{reply.created_at.strftime('%b %-m, %Y %T')}"
