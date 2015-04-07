@@ -34,5 +34,6 @@
       .row
         .flash_messages= render 'shared/flash_messages' unless flash.empty?
         = yield
+        = ticket_urefs
       %footer
         %p= "© #{Date.current.year} OnApp Support - All Rights Reserved"
