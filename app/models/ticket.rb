@@ -1,4 +1,8 @@
+require 'elasticsearch/model'
+
 class Ticket < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   include AASM
 
   aasm whiny_transitions: false do
@@ -82,3 +86,5 @@ class Ticket < ActiveRecord::Base
     self.update(employee_id: nil)
   end
 end
+
+Ticket.import

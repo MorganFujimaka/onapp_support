@@ -24,6 +24,8 @@ gem 'decent_exposure'
 gem 'figaro'
 gem 'aasm'
 gem 'will_paginate', '~> 3.0.6'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

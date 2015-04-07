@@ -1,0 +1,21 @@
+.col-md-8.col-md-offset-2
+  - if @tickets.empty?
+    %h3 Nothing was found
+  - else
+    %h3= "#{pluralize(@tickets.count, 'ticket')} were found:"
+    %br
+    %table.table.borderless
+      %tr
+        %th Reference
+        %th Subject
+        %th Status
+        %th Created At
+        %th Updated At
+      - @tickets.each do |ticket|
+        %tr
+          %td.col-md-3.vert-align= ticket.uref
+          %td.col-md-3.vert-align= link_to ticket.subject, ticket
+          %td.vert-align= Ticket::STATUSES[ticket.aasm_state.to_sym]
+          %td.vert-align= ticket.created_at.strftime('%b %-m, %Y %T')
+          %td.vert-align= ticket.updated_at.strftime('%b %-m, %Y %T')
+    = will_paginate @tickets

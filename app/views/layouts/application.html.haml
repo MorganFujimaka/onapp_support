@@ -27,6 +27,9 @@
                 = link_to 'Sign in', new_user_session_path
                 |
                 = link_to 'Sign up', new_user_registration_path
+            = simple_form_for :q, url: search_path, method: :get, html: {class: 'navbar-form navbar-right', role: 'search'} do |f|
+              = f.input :search, label: false, required: false, placeholder: 'Search', class: 'form-control'
+              = f.submit '', name: nil, style: 'display: none'
     .container-fluid
       .row
         .flash_messages= render 'shared/flash_messages' unless flash.empty?
