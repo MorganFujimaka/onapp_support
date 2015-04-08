@@ -16,4 +16,4 @@
   = render partial: 'shared/employee_change' if can? :change_assignee, ticket
   = render partial: 'replies/form' if can? :create, reply
   %h3 ticket's history:
-  = render partial: 'replies/replies', locals: {replies: ticket.replies.includes(:user)}
+  = render partial: 'replies/replies', locals: {replies: ticket.replies.includes(:employee)}

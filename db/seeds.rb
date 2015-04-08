@@ -3,10 +3,13 @@
 end
 
 5.times do |n|
-  user = User.where(username: "employee_#{n + 1}", 
-                    email:    "employee_#{n + 1}@gmail.com",
-                    role:     "employee").first_or_create! { |user| user.password = '12345678' }
-  user.create_employee.update(department: Department.all[n])
+  employee = Employee.where(department: Department.all[n]).first_or_create!
+ 
+  employee.create_user do |user|
+    user.password = '12345678'
+    user.username = "employee_#{n + 1}" 
+    user.email = "employee_#{n + 1}@gmail.com"
+  end unless employee.user
 end
 
 Ticket.aasm.states.map(&:name).each do |state|

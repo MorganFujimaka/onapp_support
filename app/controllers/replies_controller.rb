@@ -7,7 +7,7 @@ class RepliesController < ApplicationController
 
   def create
     reply.ticket_id = params[:ticket_id]
-    reply.user = current_user
+    reply.employee = current_user.role
     if reply.save
       redirect_to ticket, success: 'Reply was added successfully'
     else

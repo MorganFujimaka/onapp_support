@@ -60,6 +60,6 @@ class TicketsController < ApplicationController
   end
 
   def create_reply
-    Reply.create(user: current_user, ticket: ticket, body: @reply_body)
+    Reply.create(employee: current_user.role, ticket: ticket, body: @reply_body)
   end
 end

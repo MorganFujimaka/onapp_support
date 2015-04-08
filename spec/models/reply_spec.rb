@@ -23,8 +23,8 @@ RSpec.describe Reply, type: :model do
       expect(reply).to be_invalid
     end
 
-    it 'is not valid without user' do
-      reply = build :reply, user: nil
+    it 'is not valid without employee' do
+      reply = build :reply, employee: nil
 
       expect(reply).to be_invalid
     end

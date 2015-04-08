@@ -15,8 +15,8 @@ RSpec.describe User, type: :model do
 
   describe '#employee?' do
     it 'returns true for employee' do
-      user = create :user
-      user.update(role: 'employee')
+      employee = create :employee
+      user = employee.user = create :user
 
       expect(user.employee?).to be_truthy
     end

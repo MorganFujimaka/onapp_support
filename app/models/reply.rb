@@ -1,12 +1,12 @@
 class Reply < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :employee
   belongs_to :ticket
 
-  validates :body, :ticket_id, :user_id, presence: true
+  validates :body, :ticket_id, :employee_id, presence: true
 
   after_save :send_email
 
-  delegate :username, to: :user
+  delegate :username, to: :employee
   delegate :customer_email, to: :ticket
 
   private
