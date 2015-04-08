@@ -6,6 +6,6 @@
     %td.col-md-1.vert-align= ticket.customer_email
     %td.col-md-1.vert-align= ticket.department.name
     %td.col-md-3.vert-align= truncate ticket.body
-    %td.col-md-1.vert-align= Ticket::STATUSES[ticket.aasm_state.to_sym]
+    %td.col-md-1.vert-align= ticket.aasm_state.humanize
     %td.col-md-1.vert-align= ticket.created_at.strftime('%b %-m, %Y %T')
     %td.col-md-1.vert-align= ticket.updated_at.strftime('%b %-m, %Y %T')
