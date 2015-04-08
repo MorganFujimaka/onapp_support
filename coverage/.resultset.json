@@ -764,12 +764,6 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/home/morgan/onappapp/spec/factories/departments.rb": [
-        1,
-        1,
-        1,
-=======
       "/home/morgan/onappapp/spec/factories/customers.rb": [
         1,
         1,
@@ -782,7 +776,6 @@
         1,
         1,
         30,
->>>>>>> s
         null,
         null
       ],
@@ -790,21 +783,13 @@
         1,
         1,
         1,
-<<<<<<< HEAD
-        1,
-=======
->>>>>>> s
         null,
         null
       ],
       "/home/morgan/onappapp/spec/factories/replies.rb": [
         1,
         1,
-<<<<<<< HEAD
-        1,
-=======
         9,
->>>>>>> s
         1,
         1,
         null,
@@ -813,17 +798,10 @@
       "/home/morgan/onappapp/spec/factories/tickets.rb": [
         1,
         1,
-<<<<<<< HEAD
-        1,
-        1,
-        1,
-        1,
-=======
         21,
         20,
         21,
         21,
->>>>>>> s
         1,
         null,
         null
@@ -831,15 +809,9 @@
       "/home/morgan/onappapp/spec/factories/users.rb": [
         1,
         1,
-<<<<<<< HEAD
-        1,
-        1,
-        1,
-=======
         6,
         6,
         6,
->>>>>>> s
         null,
         null
       ],
@@ -866,11 +838,6 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-        1,
-        null,
-        1,
-=======
         null,
         1,
         null,
@@ -879,18 +846,13 @@
         null,
         null,
         1,
->>>>>>> s
         2,
         null,
         null,
         1,
-<<<<<<< HEAD
-        1,
-=======
         null,
         1,
         5,
->>>>>>> s
         null,
         null
       ],
@@ -948,11 +910,8 @@
         1,
         1,
         1,
-<<<<<<< HEAD
-=======
         1,
         1,
->>>>>>> s
         null,
         1,
         1,
@@ -1010,8 +969,6 @@
         null,
         null
       ],
-<<<<<<< HEAD
-=======
       "/home/morgan/onappapp/spec/controllers/search_controller_spec.rb": [
         1,
         null,
@@ -1289,7 +1246,6 @@
         null,
         null
       ],
->>>>>>> s
       "/home/morgan/onappapp/app/models/reply.rb": [
         1,
         1,
@@ -1305,9 +1261,6 @@
         1,
         null,
         1,
-<<<<<<< HEAD
-        1,
-=======
         4,
         null,
         null
@@ -1402,7 +1355,6 @@
         null,
         1,
         null,
->>>>>>> s
         null,
         null
       ],
@@ -1471,26 +1423,6 @@
         null,
         1,
         null,
-<<<<<<< HEAD
-        2,
-        2,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        6,
-        null,
-        null,
-        1,
-        4,
-        null,
-        null,
-        1,
-        0,
-=======
         15,
         15,
         null,
@@ -1509,27 +1441,11 @@
         null,
         1,
         2,
->>>>>>> s
         null,
         null,
         null,
         1
       ],
-<<<<<<< HEAD
-      "/home/morgan/onappapp/app/models/department.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/morgan/onappapp/app/models/ability.rb": [
-        1,
-        1,
-        null,
-        1,
-        2,
-        2,
-        1,
-=======
       "/home/morgan/onappapp/spec/models/user_spec.rb": [
         1,
         null,
@@ -1546,54 +1462,20 @@
         null,
         null,
         null,
->>>>>>> s
         1,
         1,
         1,
         1,
         null,
-<<<<<<< HEAD
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/home/morgan/onappapp/app/mailers/customer_mailer.rb": [
-=======
         1,
         null,
         null,
         null,
         1,
->>>>>>> s
         1,
         1,
         null,
         1,
-<<<<<<< HEAD
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/home/morgan/onappapp/app/mailers/application_mailer.rb": [
-        1,
-        1,
-        1,
-        null
-      ]
-    },
-    "timestamp": 1428502507
-=======
         null,
         null,
         null
@@ -1618,7 +1500,6 @@
         null
       ]
     },
-    "timestamp": 1428517643
->>>>>>> s
+    "timestamp": 1428518668
   }
 }
