@@ -3,7 +3,7 @@
     = link_to 'Edit Ticket', edit_ticket_path(ticket), class: 'btn btn-primary btn-small pull-right'
   %h2= ticket.subject
   %p= "##{ticket.uref}"
-  %span= "status: #{Ticket::STATUSES[ticket.aasm_state.to_sym]}"
+  %span= "status: #{ticket.aasm_state.humanize}"
   
   - if ticket.employee.nil?
     %span= "| Unassigned"
