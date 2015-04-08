@@ -31,8 +31,8 @@ class TicketsController < ApplicationController
   end
 
   def change_status
-    if ticket.send(ticket_params[:aasm_state] + '!')
-      new_status = Ticket::STATUSES[ticket_params[:aasm_state].to_sym]
+    if ticket.send(Ticket.states_with_events[ticket_params[:aasm_state].to_sym]) && ticket.save
+      new_status = ticket.aasm_state.humanize
       @reply_body = "Status was changed to #{new_status}"
       redirect_to ticket, success: 'Status was changed successfully'
     else

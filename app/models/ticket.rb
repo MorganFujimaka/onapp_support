@@ -24,11 +24,11 @@ class Ticket < ActiveRecord::Base
       transitions to: :on_hold
     end
 
-    event :cancelled do
+    event :cancel do
       transitions to: :cancelled
     end
 
-    event :completed do
+    event :complete do
       transitions to: :completed
     end
   end
@@ -54,13 +54,9 @@ class Ticket < ActiveRecord::Base
     end  
   end
 
-  STATUSES = {
-    waiting_for_staff:    'Waiting for Staff Response',
-    waiting_for_customer: 'Waiting for Customer',
-    on_hold:              'On Hold',
-    cancelled:            'Cancelled',
-    completed:            'Completed'
-    }
+  def self.states_with_events
+    aasm.states.map(&:name).zip(Ticket.aasm.events.map(&:name)).to_h
+  end
 
   private
 

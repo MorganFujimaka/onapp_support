@@ -2,7 +2,7 @@ class Reply < ActiveRecord::Base
   belongs_to :user
   belongs_to :ticket
 
-  validates :body, :ticket_id, presence: true
+  validates :body, :ticket_id, :user_id, presence: true
 
   after_save :send_email
 

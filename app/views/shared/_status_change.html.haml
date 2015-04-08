@@ -1,4 +1,4 @@
 .form-group
   = simple_form_for ticket, url: change_status_ticket_path(ticket), html: {class: 'form-inline'} do |f|
-    = f.input :aasm_state, collection: Ticket::STATUSES.invert, include_blank: 'Set status', label: false
+    = f.input :aasm_state, collection: Ticket.aasm.states_for_select, include_blank: 'Set status', label: false
     = f.submit 'Change status', class: 'btn btn-default btn-small'
