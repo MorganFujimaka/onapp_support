@@ -1,14 +1,12 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the TicketsHelper. For example:
-#
-# describe TicketsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe TicketsHelper, type: :helper do
+  describe '#ticket_urefs' do
+    it 'returns hidden div with ticket urefs' do
+      ticket_1 = create :ticket
+      ticket_2 = create :ticket
+
+      expect(helper.ticket_urefs).to eq("<div id=\"urefs\" class=\"hidden\">#{ticket_1.uref}, #{ticket_2.uref}</div>")
+    end
+  end
 end

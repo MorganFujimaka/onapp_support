@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
 
   def create
     if ticket.save
-      CustomerMailer.new_ticket_email(ticket.uref, ticket.customer_email, ticket_url(ticket)).deliver_now
+      CustomerMailer.new_ticket_email(ticket).deliver_now
       redirect_to ticket, success: 'Ticket was created successfully'
     else
       render 'new'

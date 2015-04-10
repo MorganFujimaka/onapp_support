@@ -4,6 +4,6 @@ FactoryGirl.define do
     customer_email { Faker::Internet.email }
     subject { Faker::Lorem.word }
     body { Faker::Lorem.paragraph }
-    association :department, factory: :department
+    department
   end
 end

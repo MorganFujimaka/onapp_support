@@ -5,8 +5,7 @@ module ControllerHelpers
       allow(controller).to receive(:current_user).and_return(nil)
     elsif user == 'employee'
       employee = create :employee
-      employee.user = create :user
-      user = employee.user
+      user = employee.create_user(attributes_for :user)
       allow(request.env['warden']).to receive(:authenticate!).and_return(user)
       allow(controller).to receive(:current_user).and_return(user)
     else

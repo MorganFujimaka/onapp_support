@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       patch :change_status
       patch :change_assignee
     end
-    resources :replies, only: [:index, :create]
+    resources :replies, only: [:create]
   end
 
   get 'search', to: 'search#search'

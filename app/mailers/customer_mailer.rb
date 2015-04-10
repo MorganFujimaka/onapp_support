@@ -1,10 +1,10 @@
 class CustomerMailer < ApplicationMailer
   default from: 'support@onappapp.com'
 
-  def new_ticket_email(uref, email, url)
-    @uref = uref
-    @url = url
-    mail to: email, subject: "#{uref} - Your ticket was added successfully"
+  def new_ticket_email(ticket)
+    @uref = ticket.uref
+    @url = ticket_url(ticket)
+    mail to: ticket.customer_email, subject: "#{@uref} - Your ticket was added successfully"
   end
 
   def ticket_updates(reply)

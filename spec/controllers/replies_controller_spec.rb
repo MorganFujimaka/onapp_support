@@ -11,20 +11,27 @@ RSpec.describe RepliesController, type: :controller do
     context 'as employee' do
       before { sign_in 'employee' }
 
-      it 'redirects to ticket' do
+      it 'redirects to ticket if reply is valid' do
         expect { post :create, reply: attributes_for(:reply), ticket_id: ticket }.to change(Reply, :count).by(1)
         expect(response).to redirect_to(Reply.last.ticket)
+      end
+
+      it 'render ticket/show if reply is invalid' do
+        expect { post :create, reply: { body: nil }, ticket_id: ticket }.to change(Reply, :count).by(0)
+        expect(response).to render_template('tickets/show')
       end
     end
 
     context 'as customer' do
       before { sign_in user }
 
-      it 'redirects to ticket' do
-        expect { post :create, reply: attributes_for(:reply), ticket_id: ticket }.to change(Reply, :count).by(0)
-        expect(response).to redirect_to(root_path)
-        expect(flash[:alert]).to eq('You are not authorized to access this page.')
-      end
+      include_examples 'customer_create_reply'
+    end
+
+    context 'as guest' do
+      before { sign_in false }
+      
+      include_examples 'customer_create_reply'
     end
   end
 end
