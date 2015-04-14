@@ -1,9 +1,8 @@
 require "rails_helper"
 
 RSpec.describe CustomerMailer, type: :mailer do
-  let(:ticket)   { create :ticket   }
-  let(:employee) { create :employee }
-  let(:reply)    { employee.replies.create(attributes_for :reply) }
+  let(:ticket)   { create :ticket }
+  let(:reply)    { create :reply  }
 
   before(:each) do
     ActionMailer::Base.delivery_method = :test
@@ -37,12 +36,11 @@ RSpec.describe CustomerMailer, type: :mailer do
 
   describe '#ticket_updates' do
     before do
-      reply.ticket = ticket
       CustomerMailer.ticket_updates(reply).deliver_now
     end
 
     it 'sends an email' do
-      expect(ActionMailer::Base.deliveries.count).to eq(1)
+      expect(ActionMailer::Base.deliveries.count).to eq(2)
     end
 
     it 'renders the receiver email' do

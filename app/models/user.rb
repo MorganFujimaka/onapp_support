@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   after_create :create_customer
 
+  validates :username, :email, :password, presence: true
+  validates :password, confirmation: true
+
   def employee?
     self.role_type == 'Employee'
   end
