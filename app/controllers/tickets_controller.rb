@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+  respond_to :html
   authorize_resource
 
   after_filter :create_reply, only: [:change_status, :change_assignee]
@@ -11,10 +12,9 @@ class TicketsController < ApplicationController
   def create
     if ticket.save
       CustomerMailer.new_ticket_email(ticket).deliver_now
-      redirect_to ticket, success: 'Ticket was created successfully'
-    else
-      render 'new'
+      flash[:success] = 'Ticket was created successfully'
     end
+    respond_with ticket
   end
 
   def edit
@@ -24,10 +24,9 @@ class TicketsController < ApplicationController
   def update
     if ticket.save
       ticket.waiting_for_staff!
-      redirect_to ticket, success: 'Ticket was updated successfully'
-    else
-      render 'edit'
+      flash[:success] = 'Ticket was updated successfully'
     end
+    respond_with ticket
   end
 
   def change_status
