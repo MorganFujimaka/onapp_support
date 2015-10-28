@@ -83,4 +83,4 @@ class Ticket < ActiveRecord::Base
   end
 end
 
-Ticket.import
+Ticket.import force: true

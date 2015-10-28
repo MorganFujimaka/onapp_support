@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
 gem 'rails', '4.2.1'
 gem 'pg'
@@ -56,7 +56,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
-  gem 'simplecov', require: false
   gem 'faker'
 end
 
